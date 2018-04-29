@@ -19,7 +19,7 @@ type mode string
 
 const (
 	developMode    mode = "dev"
-	productionMode mode = "prod"
+	productionMode mode = "prd"
 )
 
 func parseMode(modeStr string) mode {
@@ -71,7 +71,7 @@ func main() {
 		flag.StringVar(&addr, "p", ":8080", "server run port (defualt :8080) ")
 	}
 	timeoutSec := flag.Int("t", 15, "time (sec) to request timeout (defualt 15) ")
-	mode := flag.String("m", "prod", "server run mode (defualt prod) ")
+	mode := flag.String("m", "prd", "server run mode (defualt prd) ")
 	flag.Parse()
 
 	serve(*mode, addr, *timeoutSec)
