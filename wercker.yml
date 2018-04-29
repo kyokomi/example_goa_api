@@ -1,7 +1,7 @@
 no-response-timeout: 10
 
 build:
-  box: golang:1.8
+  box: golang:1.10
   steps:
     - script:
         name: set timezone and deploy tag
@@ -13,7 +13,7 @@ build:
         name: go version
         code: go version
     - kyokomi/install-goa:
-        version: v1.2.0
+        version: v1.3.1
     - script:
         name: goagen execute
         code: |
@@ -54,7 +54,7 @@ build:
         notify_on:   "failed"
 
 put-swagger:
-  box: golang:1.8
+  box: golang:1.10
   push-to-ecr:
   steps:
     - script:
