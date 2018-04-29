@@ -68,10 +68,10 @@ func serve(modeStr string, addr string, timeoutSec int) {
 func main() {
 	addr := os.Getenv("PORT")
 	if len(addr) == 0 {
-		flag.StringVar(&addr, "p", ":8080", "server run port (defualt :8080) ")
+		flag.StringVar(&addr, "p", ":8080", "server run port (default :8080) ")
 	}
-	timeoutSec := flag.Int("t", 15, "time (sec) to request timeout (defualt 15) ")
-	mode := flag.String("m", "prd", "server run mode (defualt prd) ")
+	timeoutSec := flag.Int("t", 15, "time (sec) to request timeout (default 15) ")
+	mode := flag.String("m", "prd", "server run mode (default prd) ")
 	flag.Parse()
 
 	serve(*mode, addr, *timeoutSec)
